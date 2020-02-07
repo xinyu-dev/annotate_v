@@ -1,5 +1,5 @@
 # annotate_v
-A simple to use Python script annotating VH or VL sequences of an antibody. It utilizes the REST API interface of [Abnum](http://www.bioinf.org.uk/abs/abnum/) from Dr Andrew Martin's group at UCL
+A simple to use Python script annotating VH or VL sequences of an antibody using **Kabat**, **Chothia**, **Contact**, or **IMGT** schemes. It utilizes the REST API interface of [Abnum](http://www.bioinf.org.uk/abs/abnum/) from Dr Andrew Martin's group at UCL
 
 # Description
 
