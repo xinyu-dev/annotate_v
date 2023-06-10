@@ -1,11 +1,9 @@
 # annotate_v
-Antibody Annotation - A simple to use Python script annotating VH or VL sequences of an antibody using **Kabat**, **Chothia**, **Contact**, or **IMGT** schemes. It utilizes the REST API interface of [Abnum](http://www.bioinf.org.uk/abs/abnum/) from Dr Andrew Martin's group at UCL
+Antibody Annotation - A simple to use Python script annotating VH or VL sequences of an antibody using **Kabat**, **Chothia**, **Martin** schemes. It utilizes the REST API interface of [Abnum](http://www.bioinf.org.uk/abs/abnum/) from Dr Andrew Martin's group at UCL
 
 # Description
 
-User provides a single-letter amino acid sequence of the VH or VL chain of an antibody, and specifies an annotation scheme (Kabat, Chothia, or Contact, or IMGT). The script sends a request to [Abnum](http://www.bioinf.org.uk/abs/abnum/), which returns a string with each residue matched to its number. The script then identifies FR and CDR regions using definitions outlined [here](http://www.bioinf.org.uk/abs/info.html#kabatnum)<sup>1</sup>. It prints out the amino acid sequence of the FRs and CDRs, and returns a `list` of 2 `dict`. The first `dict` consists of `region: seq` pairs. The second `dict` consists of `number:residue` pairs. 
-
-<sup>1</sup>Definitions for Kabat, Chothia, Contact, and IIMGT are same as listed in the table, except that for IMGT, H-CDR2 is defined as **H51-H57** in this script, as opposed to of **H51-H56** in the table. This slight revision generates result that matches that from [IMGT website](http://www.imgt.org/)
+User provides a single-letter amino acid sequence of the VH or VL chain of an antibody, and specifies an annotation scheme (Kabat, Chothia, or Martin). The script sends a request to [Abnum](http://www.bioinf.org.uk/abs/abnum/), which returns a string with each residue matched to its number. The script then identifies FR and CDR regions using definitions outlined [here](http://www.bioinf.org.uk/abs/info.html#kabatnum)<sup>1</sup>. It prints out the amino acid sequence of the FRs and CDRs, and returns a `list` of 2 `dict`. The first `dict` consists of `region: seq` pairs. The second `dict` consists of `number:residue` pairs. 
 
 # Dependencies
 - Imports `requests` module
@@ -16,7 +14,7 @@ User provides a single-letter amino acid sequence of the VH or VL chain of an an
 
 `aaseq`: *STRING* amino acid sequence, **single-letter** coded, needs to be **complete VH OR VL** sequence. Upper/lower case. 
 
-`scheme`:*STRING* annotation scheme, can be one of the following: **"kabat", "chothia", "contact", "imgt"**. Must be **lowercase**
+`scheme`:*STRING* annotation scheme, can be one of the following: **"kabat", "chothia". Must be **lowercase**
 
 ```python
 aaseq="EIVLTQSPAIMSASPGERVTMTCSASSGVNYMHWYQQKPGTSPRRWIYDTSKLASGVPARFSGSGSGTDYSLTISSMEPEDAATYYCHQRGSYTFGGGTKLEIK"
@@ -50,5 +48,5 @@ L-FR4:   FGGGTKLEIK
 
 # Limitations
 - Relies on internet connection to [Abnum](http://www.bioinf.org.uk/abs/abnum/) website
-- Currently it can only annotate using Kabat, Chothia, or Contact, or IMGT scheme. One scheme each time.
+- Currently it can only annotate using Kabat, Chothia, or Martin scheme. One scheme each time.
 - Incomplete VH or VL sequence might not be annotated 
